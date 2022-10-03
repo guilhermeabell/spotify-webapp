@@ -18,12 +18,12 @@ export function Spotify() {
           "Content-Type": "application/json",
         },
       });
-      console.log({ data });
+      // console.log({ data });
       const userInfo = {
         userId: data.id,
         userName: data.display_name,
       };
-      console.log(userInfo);
+      // console.log(userInfo);
       dispatch({ type: reducerCases.SET_USER, userInfo });
     };
     getUserInfo();

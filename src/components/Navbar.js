@@ -6,7 +6,7 @@ import { useStateProvider } from "../utils/StateProvider";
 
 export default function Navbar() {
   const [{ userInfo }] = useStateProvider();
-  console.log({ userInfo });
+  // console.log({ userInfo });
   return (
     <Container>
       <div className="search_bar">
