@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types'
 import { FaSearch } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { useStateProvider } from "../utils/StateProvider";
@@ -23,7 +24,7 @@ export default function Navbar({ navBackground }) {
 }
 
 Navbar.propTypes = {
-  navBackground: PropTypes.string,
+  navBackground: PropTypes.bool.isRequired,
 }
 
 const Container = styled.div`

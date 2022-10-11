@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import PropTypes from 'prop-types'
 import { AiFillClockCircle } from "react-icons/ai";
 import { useStateProvider } from "../utils/StateProvider";
 import axios from "axios";
@@ -139,7 +140,7 @@ export default function Body({ headerBackground }) {
 }
 
 Body.propTypes = {
-  headerBackground: PropTypes.string,
+  headerBackground: PropTypes.bool.isRequired,
 }
 
 const Container = styled.div`
