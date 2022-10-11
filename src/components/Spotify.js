@@ -64,6 +64,9 @@ const Container = styled.div`
   overflow: hidden;
   display: grid;
   grid-template-rows: 85vh 15vh;
+  .spotify_footer {
+      background-color: #000;
+    }
   .spotify_body {
     display: grid;
     grid-template-columns: 15vw 85vw;
