@@ -43,9 +43,16 @@ export function CurrentTrack() {
           <div className="track_image">
             <img src={currentlyPlaying.image} alt="currentyPlaying" />
           </div>
-          <div className="track_info">
-            <h4>{currentlyPlaying.name}</h4>
-            <h6>{currentlyPlaying.artists.join(", ")}</h6>
+          <div className="track__info">
+            <h5>
+             <div className='track_name'>
+              {currentlyPlaying.name}
+              </div> 
+              <br />
+              <div className='track_artist'>
+              {currentlyPlaying.artists.join(", ")}
+              </div>
+            </h5>
           </div>
         </div>
       )
@@ -55,21 +62,21 @@ export function CurrentTrack() {
   
 }
 
-
 const Container = styled.div`
   .track {
     display: flex;
     align-items: center;
     gap: 1rem;
-    &track_info {
+    &__info {
       display: flex;
       flex-direction: column;
-      gap: 0.3rem;
-      h4 {
+      .track_name {
         color: white;
+        
       }
-      h6 {
-        color: #B3B3B3 ;
+      .track_artist {
+        color: #B3B3B3;
+        font-size: 10px;
       }
     }
   }
