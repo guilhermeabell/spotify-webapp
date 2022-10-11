@@ -4,10 +4,10 @@ import axios from "axios";
 import styled from "styled-components";
 import { reducerCases } from "../utils/constants";
 import { useStateProvider } from "../utils/StateProvider";
-import Body from "./Body";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import { Body } from "./Body";
+import { Footer } from "./Footer";
+import { Navbar } from "./Navbar";
+import { Sidebar } from "./Sidebar";
 
 export function Spotify() {
   const [{ token }, dispatch] = useStateProvider();

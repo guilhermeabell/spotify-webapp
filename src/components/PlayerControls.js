@@ -7,10 +7,6 @@ import { useStateProvider } from '../utils/StateProvider'
 import axios from 'axios'
 import { reducerCases } from '../utils/constants'
 
-
-
-
-
 export  function PlayerControls() {
  const [{ token, playerState }, dispatch] = useStateProvider()
 
@@ -83,6 +79,9 @@ const changeState = async () => {
         <CgPlayTrackNext onClick={() => changeTrack('next')} />
       </div>
       <div className="repeat">
+        {
+
+        }
         <FiRepeat />
       </div>
     </Container>

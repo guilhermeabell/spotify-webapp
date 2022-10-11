@@ -4,7 +4,7 @@ import { IoLibrary } from "react-icons/io5";
 import { MdHomeFilled, MdSearch } from "react-icons/md";
 import Playlists from "./Playlists";
 
-export default function Sidebar() {
+export function Sidebar() {
   return (
     <Container>
       <div className="top_links">

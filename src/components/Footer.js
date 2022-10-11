@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { CurrentTrack } from './CurrentTrack'
 import { PlayerControls } from './PlayerControls'
 
-export default function Footer() {
+export function Footer() {
   return <Container>
     <CurrentTrack />
     <PlayerControls />
