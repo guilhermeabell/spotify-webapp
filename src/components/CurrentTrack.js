@@ -29,11 +29,14 @@ export function CurrentTrack() {
       }
       dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying });
     }
-    
   };
 
   getCurrentTrack();
 }, [token, dispatch]);
+
+/*
+player controls only work if user account is premium
+*/
 
   return (
   <Container>
