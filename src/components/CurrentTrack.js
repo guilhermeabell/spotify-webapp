@@ -1,3 +1,4 @@
+import React from 'react'
 import {useEffect} from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
@@ -34,7 +35,8 @@ export function CurrentTrack() {
   getCurrentTrack();
 }, [token, dispatch]);
 
-  return <Container>
+  return (
+  <Container>
     {
       currentlyPlaying && (
         <div className="track">
@@ -49,7 +51,10 @@ export function CurrentTrack() {
       )
     }
     </Container>
+  )
+  
 }
+
 
 const Container = styled.div`
   .track {

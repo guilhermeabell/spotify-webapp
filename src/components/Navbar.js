@@ -4,9 +4,8 @@ import { FaSearch } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { useStateProvider } from "../utils/StateProvider";
 
-export default function Navbar({navBackground}) {
+export default function Navbar({ navBackground }) {
   const [{ userInfo }] = useStateProvider();
-  // console.log({ userInfo });
   return (
     <Container navBackground={navBackground}>
       <div className="search_bar">
@@ -21,6 +20,10 @@ export default function Navbar({navBackground}) {
       </div>
     </Container>
   );
+}
+
+Navbar.propTypes = {
+  navBackground: PropTypes.string,
 }
 
 const Container = styled.div`

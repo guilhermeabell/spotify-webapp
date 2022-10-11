@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { Login } from "./components/Login";
 import { reducerCases } from "./utils/constants";
 import { useStateProvider } from "./utils/StateProvider";
