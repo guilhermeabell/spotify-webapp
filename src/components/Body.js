@@ -114,7 +114,7 @@ export function Body({ headerBackground }) {
                             </div>
                           <div className="info">
                             <span className="name">
-                              {name }
+                              {name}
                             </span>
                             <span>
                               {artists}
@@ -125,12 +125,11 @@ export function Body({ headerBackground }) {
                             <span>{album}</span>
                           </div>
                           <div className="col">
-                            <span>{ msToMinutesAndSeconds(duration) }</span>
+                            <span>{ msToMinutesAndSeconds(duration)}</span>
                           </div>
                       </div>
                     )
                   })}
-
             </div>
           </div>
         </>
@@ -172,7 +171,7 @@ const Container = styled.div`
       display: grid;
       grid-template-columns: 0.3fr 3fr 2fr 0.1fr;
       color: #DDDCDC;
-      margin-top: 1rem 0 0 0;
+      margin-top: 1rem;
       position: sticky;
       top: 15vh;
       padding: 1rem 3rem;

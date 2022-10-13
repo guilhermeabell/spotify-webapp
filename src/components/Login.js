@@ -30,7 +30,7 @@ export function Login() {
         src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Black.png"
         alt="spotify"
       />
-      <button onClick={handleClickLogin}>Connect Spotify</button>
+      <button onClick={handleClickLogin}>Login with spotify</button>
     </Container>
   );
 }
