@@ -5,7 +5,7 @@ import { FaSearch } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { useStateProvider } from "../utils/StateProvider";
 
-export function Navbar({ navBackground }) {
+export function Navbar(navBackground ) {
   const [{ userInfo }] = useStateProvider();
   return (
     <Container navBackground={navBackground}>
@@ -14,7 +14,7 @@ export function Navbar({ navBackground }) {
         <input type="text" placeholder="Artistas, músicas ou podcasts" />
       </div>
       <div className="avatar">
-        <a href="#">
+        <a href="#">  
           <CgProfile />
           <span>{userInfo?.userName}</span>
         </a>
