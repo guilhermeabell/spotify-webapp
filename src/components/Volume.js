@@ -1,12 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
-import { useStateProvider } from '../utils/StateProvider';
-import axios from 'axios';
+import React from 'react'
+import styled from 'styled-components'
+import { useStateProvider } from '../utils/StateProvider'
+import axios from 'axios'
 
 export function Volume() {
   const [{ token }] = useStateProvider()
   const setVolume = async (e) => {
-   const response = await axios.put(
+    const response = await axios.put(
       `https://api.spotify.com/v1/me/player/volume`,
       {},
       {
@@ -14,16 +14,18 @@ export function Volume() {
           volume_percent: parseInt(e.target.value),
         },
         headers: {
-          Authorization: "Bearer " + token,
-          "Content-Type": "application/json",
+          Authorization: 'Bearer ' + token,
+          'Content-Type': 'application/json',
         },
-      }
-    );
+      },
+    )
     console.log(response)
   }
-  return <Container>
-    <input type="range" min={0} max={100} onMouseUp={(e) => setVolume(e)} />
-  </Container>;
+  return (
+    <Container>
+      <input type="range" min={0} max={100} onMouseUp={(e) => setVolume(e)} />
+    </Container>
+  )
 }
 
 const Container = styled.div`
@@ -35,4 +37,4 @@ const Container = styled.div`
     border-radius: 2rem;
     height: 0.5rem;
   }
-`;
+`

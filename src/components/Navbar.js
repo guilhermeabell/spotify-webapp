@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { FaSearch } from "react-icons/fa";
-import { CgProfile } from "react-icons/cg";
-import { useStateProvider } from "../utils/StateProvider";
+import { FaSearch } from 'react-icons/fa'
+import { CgProfile } from 'react-icons/cg'
+import { useStateProvider } from '../utils/StateProvider'
 
-export function Navbar(navBackground ) {
-  const [{ userInfo }] = useStateProvider();
+export function Navbar(navBackground) {
+  const [{ userInfo }] = useStateProvider()
   return (
     <Container navBackground={navBackground}>
       <div className="search_bar">
@@ -14,13 +14,13 @@ export function Navbar(navBackground ) {
         <input type="text" placeholder="Artistas, músicas ou podcasts" />
       </div>
       <div className="avatar">
-        <a href="#">  
+        <a href="#">
           <CgProfile />
           <span>{userInfo?.userName}</span>
         </a>
       </div>
     </Container>
-  );
+  )
 }
 
 Navbar.propTypes = {
@@ -36,7 +36,7 @@ const Container = styled.div`
   position: sticky;
   top: 0;
   transition: 0.3s ease-in-out;
-  background-color: ${({navBackground}) => navBackground ? "rgba(0, 0, 0, 0.7)" : "none"};
+  background-color: ${({ navBackground }) => (navBackground ? 'rgba(0, 0, 0, 0.7)' : 'none')};
   .search_bar {
     background-color: white;
     width: 30%;
@@ -79,4 +79,4 @@ const Container = styled.div`
       }
     }
   }
-`;
+`
