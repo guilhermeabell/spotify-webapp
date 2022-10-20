@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import { Login } from './components/Login'
-import { reducerCases } from './utils/constants/index'
-import { useStateProvider } from './utils/StateProvider'
-import { Spotify } from './components/Spotify'
+import { Login } from '../components/Login'
+import { reducerCases } from '../utils/constants/index'
+import { useStateProvider } from '../utils/StateProvider'
+import { Spotify } from '../components/Spotify'
 
 export default function App() {
   const [{ token }, dispatch] = useStateProvider()
