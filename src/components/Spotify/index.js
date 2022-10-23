@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import { reducerCases } from '../utils/constants'
-import { useStateProvider } from '../utils/StateProvider'
-import { Body } from './Body'
-import { Footer } from './Footer'
-import { Navbar } from './Navbar'
-import { Sidebar } from './Sidebar'
-import updatedComponent from './BackgroundHOC'
+import { reducerCases } from '../../utils/constants'
+import { useStateProvider } from '../../contexts/StateProvider'
+import { Body } from '../Body'
+import { Footer } from '../Footer'
+import { Navbar } from '../Navbar'
+import { Sidebar } from '../Sidebar'
+import updatedComponent from '../BackgroundHOC'
 import PropTypes from 'prop-types'
+
+import { Container } from './styles'
 
 function Spotify({ bodyScroll, headerBackground, navBackground, bodyRef }) {
   const [{ token }, dispatch] = useStateProvider()
@@ -67,31 +69,3 @@ Spotify.propTypes = {
 }
 
 export default updatedComponent(Spotify)
-
-const Container = styled.div`
-  max-width: 100vw;
-  max-height: 100vh;
-  overflow: hidden;
-  display: grid;
-  grid-template-rows: 85vh 15vh;
-  .spotify_footer {
-    background-color: #000;
-  }
-  .spotify_body {
-    display: grid;
-    grid-template-columns: 15vw 85vw;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 1));
-    background-color: rgb(32, 87, 100);
-    .body {
-      overflow: auto;
-      height: 100%;
-      width: 100%;
-      &::-webkit-scrollbar {
-        width: 0.7rem;
-        background-color: rgba(255, 255, 255, 0.6);
-      }
-    }
-  }
-`

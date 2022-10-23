@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Login } from '../components/Login'
 import { reducerCases } from '../utils/constants/index'
-import { useStateProvider } from '../utils/StateProvider'
+import { useStateProvider } from '../contexts/StateProvider'
 import Spotify from '../components/Spotify'
 import Loader from '../components/Loader'
 

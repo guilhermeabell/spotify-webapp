@@ -2,8 +2,10 @@ import React from 'react'
 import { useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
-import { reducerCases } from '../utils/constants/index'
-import { useStateProvider } from '../utils/StateProvider'
+import { reducerCases } from '../../utils/constants/index'
+import { useStateProvider } from '../../contexts/StateProvider'
+
+import { Container } from './styles'
 
 export function CurrentTrack() {
   const [{ token, currentlyPlaying }, dispatch] = useStateProvider()
@@ -54,22 +56,3 @@ player controls only work if user account is premium
     </Container>
   )
 }
-
-const Container = styled.div`
-  .track {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    &__info {
-      display: flex;
-      flex-direction: column;
-      .track_name {
-        color: white;
-      }
-      .track_artist {
-        color: #b3b3b3;
-        font-size: 10px;
-      }
-    }
-  }
-`
