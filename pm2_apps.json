@@ -2,7 +2,7 @@
   "apps": [
     {
       "name": "frontend_app",
-      "script": "yarn",
+      "script": "npm",
       "args": "start"
     }
   ]
