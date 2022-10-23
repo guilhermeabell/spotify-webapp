@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 import SpotifyLogo from '../assets/Spotify.png'
 
 import { Container } from './styles'
