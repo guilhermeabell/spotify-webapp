@@ -63,8 +63,10 @@ Spotify web app clone
 
 - [ReactJS](https://reactjs.org/)
 - [styled-components](https://www.styled-components.com/)
+- [axios](https://axios-http.com/ptbr/docs/intro)
+- [pm2](https://pm2.keymetrics.io/)
 
 ---
 
-Made with ♥ by Guilherme Abel [Get in touch!](https://www.linkedin.com/in/guilhermeabel/)
+Made with  by Guilherme Abel [Get in touch!](https://www.linkedin.com/in/guilhermeabel/)
 
