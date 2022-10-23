@@ -65,6 +65,7 @@ Spotify web app clone
 - [styled-components](https://www.styled-components.com/)
 - [axios](https://axios-http.com/ptbr/docs/intro)
 - [pm2](https://pm2.keymetrics.io/)
+- [Github Actions](https://github.com/features/actions)
 
 ---
 
