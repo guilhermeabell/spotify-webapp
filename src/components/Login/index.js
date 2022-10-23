@@ -6,7 +6,7 @@ import { Container } from './styles'
 export function Login() {
   const handleClickLogin = () => {
     const client_id = '2d17b3e09c664d32b1deb7649dcf36c5'
-    const redirect_uri = 'http://localhost:3000/'
+    const redirect_uri = process.env.REACT_APP_REDIRECT_URL || 'http://localhost:3000/'
     const api_uri = 'https://accounts.spotify.com/authorize'
     const scope = [
       'user-read-email',
