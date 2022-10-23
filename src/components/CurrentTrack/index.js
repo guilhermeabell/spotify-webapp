@@ -55,3 +55,5 @@ player controls only work if user account is premium
     </Container>
   )
 }
+
+export default CurrentTrack

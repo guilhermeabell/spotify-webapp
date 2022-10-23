@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStateProvider } from '../contexts/StateProvider'
+import { useStateProvider } from '../../contexts/StateProvider'
 import axios from 'axios'
 
 import { Container } from './styles'

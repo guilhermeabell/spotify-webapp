@@ -1,7 +1,7 @@
 import React from 'react'
 import { IoLibrary } from 'react-icons/io5'
 import { MdHomeFilled, MdSearch } from 'react-icons/md'
-import Playlists from './Playlists'
+import Playlists from '../Playlists'
 
 import { Container } from './styles'
 

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const Container = styled.div`
+export const Container = styled.div`
   max-width: 100vw;
   max-height: 100vh;
   overflow: hidden;
