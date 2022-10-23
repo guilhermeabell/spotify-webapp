@@ -21,4 +21,4 @@ jobs:
         run: yarn
 
       - name: Build
-        run: yarn build
+        run: yarn run dist
