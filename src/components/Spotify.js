@@ -7,18 +7,20 @@ import { Body } from './Body'
 import { Footer } from './Footer'
 import { Navbar } from './Navbar'
 import { Sidebar } from './Sidebar'
+import updatedComponent from './BackgroundHOC'
+import PropTypes from 'prop-types'
 
-export function Spotify() {
+function Spotify({ bodyScroll, headerBackground, navBackground, bodyRef }) {
   const [{ token }, dispatch] = useStateProvider()
 
-  const bodyRef = useRef()
-  const [navBackground, setNavBackground] = useState(false)
-  const [headerBackground, setHeaderBackground] = useState(false)
+  // const bodyRef = useRef()
+  // const [navBackground, setNavBackground] = useState(false)
+  // const [headerBackground, setHeaderBackground] = useState(false)
 
-  const bodyScroll = () => {
-    bodyRef.current.scrollTop >= 30 ? setNavBackground(true) : setNavBackground(false)
-    bodyRef.current.scrollTop >= 268 ? setHeaderBackground(true) : setHeaderBackground(false)
-  }
+  // const bodyScroll = () => {
+  //   bodyRef.current.scrollTop >= 30 ? setNavBackground(true) : setNavBackground(false)
+  //   bodyRef.current.scrollTop >= 268 ? setHeaderBackground(true) : setHeaderBackground(false)
+  // }
 
   useEffect(() => {
     const getUserInfo = async () => {
@@ -56,6 +58,15 @@ export function Spotify() {
     </Container>
   )
 }
+
+Spotify.propTypes = {
+  headerBackground: PropTypes.bool.isRequired,
+  navBackground: PropTypes.bool.isRequired,
+  bodyScroll: PropTypes.func.isRequired,
+  bodyRef: PropTypes.object.isRequired,
+}
+
+export default updatedComponent(Spotify)
 
 const Container = styled.div`
   max-width: 100vw;
