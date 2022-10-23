@@ -1,0 +1,9 @@
+{
+  "apps": [
+    {
+      "name": "frontend_app",
+      "script": "yarn",
+      "args": "start"
+    }
+  ]
+}

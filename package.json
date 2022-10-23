@@ -24,7 +24,8 @@
     "lint": "eslint src --ext .js,jsx",
     "eject": "react-scripts eject",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "pm2": "pm2 start pm2_apps.json"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
