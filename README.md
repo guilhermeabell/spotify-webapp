@@ -50,6 +50,13 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 Spotify web app clone
 </h4>
 
+<h1 align="center">
+    <img  src="https://res.cloudinary.com/ds8f113td/image/upload/v1666549839/Captura_de_Tela_2022-10-23_a%CC%80s_06.04.18_hjycfn.png" width="800px" />
+    <br>
+      <img  src="https://res.cloudinary.com/ds8f113td/image/upload/v1666549828/Captura_de_Tela_2022-10-23_a%CC%80s_06.03.25_hx7box.png" width="800px" />
+    Spotify Web App
+</h1>
+
 
 ##  Technologies
 
