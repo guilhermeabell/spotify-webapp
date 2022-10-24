@@ -60,7 +60,6 @@ Spotify web app clone
 
 ##  Technologies
 
-
 - [ReactJS](https://reactjs.org/)
 - [styled-components](https://www.styled-components.com/)
 - [axios](https://axios-http.com/ptbr/docs/intro)
