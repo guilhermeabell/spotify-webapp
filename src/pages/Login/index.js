@@ -32,6 +32,12 @@ function Login() {
     )}&response_type=token&show_dialog=true`
   }
 
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/')
+    }
+  }, [isAuthenticated])
+
   return (
     <S.Container>
       <img src={SpotifyLogo} alt="spotify" />
