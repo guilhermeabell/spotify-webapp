@@ -1,13 +1,17 @@
-import React from 'react'
-import { useEffect } from 'react'
 import axios from 'axios'
-import { reducerCases } from '../../utils/constants/index'
+import React, { useEffect } from 'react'
 import { useStateProvider } from '../../contexts/StateProvider'
+import { reducerCases } from '../../utils/constants/index'
 
 import * as S from './styles'
 
+import { parseCookies } from 'nookies'
+
 export function CurrentTrack() {
-  const [{ token, currentlyPlaying }, dispatch] = useStateProvider()
+  const { ['@token']: token } = parseCookies()
+
+  const [{ currentlyPlaying }, dispatch] = useStateProvider()
+
   useEffect(() => {
     const getCurrentTrack = async () => {
       const response = await axios.get('https://api.spotify.com/v1/me/player/currently-playing', {

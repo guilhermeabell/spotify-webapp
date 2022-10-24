@@ -1,12 +1,18 @@
 import React from 'react'
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import SpotifyLogo from '../../assets/Spotify.png'
+import { useAuth } from '../../contexts/AuthContext'
 
 import * as S from './styles'
 
-export function Login() {
+function Login() {
+  const { isAuthenticated } = useAuth()
+  const navigate = useNavigate()
+
   const handleClickLogin = () => {
-    const client_id = '2d17b3e09c664d32b1deb7649dcf36c5'
-    const redirect_uri = process.env.REACT_APP_REDIRECT_URL || 'http://localhost:3000/'
+    const client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID
+    const redirect_uri = `${process.env.REACT_APP_REDIRECT_URL}` || 'http://localhost:3000/auth'
     const api_uri = 'https://accounts.spotify.com/authorize'
     const scope = [
       'user-read-email',
@@ -26,6 +32,13 @@ export function Login() {
       ',',
     )}&response_type=token&show_dialog=true`
   }
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/')
+    }
+  }, [isAuthenticated])
+
   return (
     <S.Container>
       <img src={SpotifyLogo} alt="spotify" />
@@ -33,3 +46,5 @@ export function Login() {
     </S.Container>
   )
 }
+
+export default Login

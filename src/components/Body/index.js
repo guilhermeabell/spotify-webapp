@@ -1,14 +1,19 @@
-import React, { useEffect } from 'react'
+import axios from 'axios'
 import PropTypes from 'prop-types'
+import React, { useEffect } from 'react'
 import { AiFillClockCircle } from 'react-icons/ai'
 import { useStateProvider } from '../../contexts/StateProvider'
-import axios from 'axios'
 import { reducerCases } from '../../utils/constants/index'
 
 import * as S from './styles'
 
+import { parseCookies } from 'nookies'
+
 export function Body({ headerBackground }) {
-  const [{ token, selectedPlaylistId, selectedPlaylist }, dispatch] = useStateProvider()
+  const { ['@token']: token } = parseCookies()
+
+  const [{ selectedPlaylistId, selectedPlaylist }, dispatch] = useStateProvider()
+
   useEffect(() => {
     const getInitialPlaylist = async () => {
       const response = await axios.get(`https://api.spotify.com/v1/playlists/${selectedPlaylistId}`, {
