@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const { [COOKIE_TOKEN]: token } = parseCookies()
-    console.log({ isAuthenticated: !!token })
+
     setIsAuthenticated(!!token)
   }, [])
 
