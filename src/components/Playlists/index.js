@@ -1,13 +1,16 @@
-import React from 'react'
-import { useEffect } from 'react'
-import { useStateProvider } from '../../contexts/StateProvider'
 import axios from 'axios'
+import React, { useEffect } from 'react'
+import { useStateProvider } from '../../contexts/StateProvider'
 import { reducerCases } from '../../utils/constants/index'
 
+import { parseCookies } from 'nookies'
 import * as S from './styles'
 
 export default function Playlists() {
-  const [{ token, playlists }, dispatch] = useStateProvider()
+  const { ['@token']: token } = parseCookies()
+
+  const [{ playlists }, dispatch] = useStateProvider()
+
   useEffect(() => {
     const getPlaylistData = async () => {
       const response = await axios.get('https://api.spotify.com/v1/me/playlists', {

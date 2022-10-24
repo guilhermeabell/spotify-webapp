@@ -1,11 +1,12 @@
-import React from 'react'
-import { useStateProvider } from '../../contexts/StateProvider'
 import axios from 'axios'
+import React from 'react'
 
+import { parseCookies } from 'nookies'
 import * as S from './styles'
 
 export function Volume() {
-  const [{ token }] = useStateProvider()
+  const { ['@token']: token } = parseCookies()
+
   const setVolume = async (e) => {
     const response = await axios.put(
       `https://api.spotify.com/v1/me/player/volume`,

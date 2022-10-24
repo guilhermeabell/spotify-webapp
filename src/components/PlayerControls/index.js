@@ -1,15 +1,17 @@
+import axios from 'axios'
 import React from 'react'
-import { BsFillPlayCircleFill, BsFillPauseCircleFill, BsShuffle } from 'react-icons/bs'
+import { BsFillPauseCircleFill, BsFillPlayCircleFill, BsShuffle } from 'react-icons/bs'
 import { CgPlayTrackNext, CgPlayTrackPrev } from 'react-icons/cg'
 import { FiRepeat } from 'react-icons/fi'
 import { useStateProvider } from '../../contexts/StateProvider'
-import axios from 'axios'
 import { reducerCases } from '../../utils/constants/index'
 
+import { parseCookies } from 'nookies'
 import * as S from './styles'
 
 export function PlayerControls() {
-  const [{ token, playerState }, dispatch] = useStateProvider()
+  const { ['@token']: token } = parseCookies()
+  const [{ playerState }, dispatch] = useStateProvider()
 
   const changeTrack = async (type) => {
     await axios.post(

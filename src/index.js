@@ -1,13 +1,24 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './styles/index.css'
-import App from './App/App'
+import { BrowserRouter } from 'react-router-dom'
+
 import { StateProvider } from './contexts/StateProvider'
 import reducer, { initialState } from './utils/reducer'
 
+import Routes from './routes'
+import AuthProvider from './contexts/AuthContext'
+
+import './styles/index.css'
+
 const root = ReactDOM.createRoot(document.getElementById('root'))
+
 root.render(
-  <StateProvider reducer={reducer} initialState={initialState}>
-    <App />
-  </StateProvider>,
+  <BrowserRouter>
+    <StateProvider reducer={reducer} initialState={initialState}>
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
+    </StateProvider>
+    ,
+  </BrowserRouter>,
 )
