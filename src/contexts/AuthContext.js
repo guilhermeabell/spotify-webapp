@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-const COOKIE_TOKEN = '@token'
+export const COOKIE_TOKEN = '@token'
 
 import { destroyCookie, parseCookies, setCookie } from 'nookies'
 import React, { createContext, useContext, useEffect, useState } from 'react'

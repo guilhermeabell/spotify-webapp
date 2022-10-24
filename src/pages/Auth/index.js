@@ -1,8 +1,9 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
 import qs from 'query-string'
+import React, { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
-import { useEffect } from 'react'
+
+import Loader from '../../components/Loader'
 
 const Auth = () => {
   const { setToken } = useAuth()
@@ -15,11 +16,7 @@ const Auth = () => {
     }
   }, [accessToken])
 
-  if (accessToken) {
-    return <h1>Authenticated</h1>
-  }
-
-  return <h1>Not authenticated</h1>
+  return <Loader />
 }
 
 export default Auth
