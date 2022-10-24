@@ -47,6 +47,12 @@ const reducer = (state, action) => {
         playerState: action.playerState,
       }
     }
+    case reducerCases.SET_PLAYLISTS_ID: {
+      return {
+        ...state,
+        selectedPlaylistId: action.selectedPlaylistId,
+      }
+    }
     default:
       return state
   }
