@@ -4,7 +4,7 @@ export const initialState = {
   token: null,
   playlists: [],
   userInfo: null,
-  selectedPlaylistId: '0vvXsWCC9xrXsKd4FyS8kM',
+  selectedPlaylistId: '',
   selectedPlaylist: null,
   playerState: false,
 }
