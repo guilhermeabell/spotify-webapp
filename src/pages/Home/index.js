@@ -1,14 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react'
-import axios from 'axios'
 import PropTypes from 'prop-types'
+import { useEffect } from 'react'
 
-import { reducerCases } from '../../utils/constants'
-import { useStateProvider } from '../../contexts/StateProvider'
+import updatedComponent from '../../components/BackgroundHOC'
 import { Body } from '../../components/Body'
 import { Footer } from '../../components/Footer'
 import { Navbar } from '../../components/Navbar'
 import { Sidebar } from '../../components/Sidebar'
-import updatedComponent from '../../components/BackgroundHOC'
+import { useStateProvider } from '../../contexts/StateProvider'
+import { reducerCases } from '../../utils/constants'
 
 import { getUserInfo } from '../../services/me'
 

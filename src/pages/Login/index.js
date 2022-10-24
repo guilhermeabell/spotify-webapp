@@ -1,4 +1,3 @@
-import React from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import SpotifyLogo from '../../assets/Spotify.png'
@@ -32,12 +31,6 @@ function Login() {
       ',',
     )}&response_type=token&show_dialog=true`
   }
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      navigate('/')
-    }
-  }, [isAuthenticated])
 
   return (
     <S.Container>

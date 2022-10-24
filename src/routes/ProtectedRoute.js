@@ -1,12 +1,13 @@
-/* eslint-disable react/prop-types */
 import React from 'react'
-import { Navigate, Route } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+import { parseCookies } from 'nookies'
+import { Navigate } from 'react-router-dom'
+
+import { COOKIE_TOKEN } from '../contexts/AuthContext'
 
 const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated } = useAuth()
+  const { [COOKIE_TOKEN]: token } = parseCookies()
 
-  if (!isAuthenticated) {
+  if (!token) {
     return <Navigate to="/login" replace />
   }
 
