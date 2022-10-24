@@ -69,5 +69,5 @@ Spotify web app clone
 
 ---
 
-Made with  by Guilherme Abel [Get in touch!](https://www.linkedin.com/in/guilhermeabel/)
+Made with  by Guilherme Abel
 
