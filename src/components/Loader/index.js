@@ -1,15 +1,15 @@
 import React from 'react'
 
-import { Container, Shadow, SpotifyLoader } from './styles'
+import * as S from './styles'
 
 import SpotifyLoaderImg from '../../assets/SpotifyLoader.png'
 
 function Loader() {
   return (
-    <Container>
-      <SpotifyLoader src={SpotifyLoaderImg} />
-      <Shadow />
-    </Container>
+    <S.Container>
+      <S.SpotifyLoader src={SpotifyLoaderImg} />
+      <S.Shadow />
+    </S.Container>
   )
 }
 

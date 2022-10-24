@@ -1,7 +1,7 @@
 import React from 'react'
 import SpotifyLogo from '../../assets/Spotify.png'
 
-import { Container } from './styles'
+import * as S from './styles'
 
 export function Login() {
   const handleClickLogin = () => {
@@ -27,9 +27,9 @@ export function Login() {
     )}&response_type=token&show_dialog=true`
   }
   return (
-    <Container>
+    <S.Container>
       <img src={SpotifyLogo} alt="spotify" />
       <button onClick={handleClickLogin}>Login with spotify</button>
-    </Container>
+    </S.Container>
   )
 }

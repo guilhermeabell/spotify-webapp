@@ -9,7 +9,7 @@ import { Sidebar } from '../Sidebar'
 import updatedComponent from '../BackgroundHOC'
 import PropTypes from 'prop-types'
 
-import { Container } from './styles'
+import * as S from './styles'
 
 function Spotify({ bodyScroll, headerBackground, navBackground, bodyRef }) {
   const [{ token }, dispatch] = useStateProvider()
@@ -43,7 +43,7 @@ function Spotify({ bodyScroll, headerBackground, navBackground, bodyRef }) {
   }, [dispatch, token])
 
   return (
-    <Container>
+    <S.Container>
       <div className="spotify_body">
         <Sidebar />
         <div className="body" ref={bodyRef} onScroll={bodyScroll}>
@@ -56,7 +56,7 @@ function Spotify({ bodyScroll, headerBackground, navBackground, bodyRef }) {
       <div className="spotify_footer">
         <Footer />
       </div>
-    </Container>
+    </S.Container>
   )
 }
 

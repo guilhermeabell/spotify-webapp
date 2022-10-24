@@ -4,7 +4,7 @@ import { useStateProvider } from '../../contexts/StateProvider'
 import axios from 'axios'
 import { reducerCases } from '../../utils/constants/index'
 
-import { Container } from './styles'
+import * as S from './styles'
 
 export default function Playlists() {
   const [{ token, playlists }, dispatch] = useStateProvider()
@@ -28,7 +28,7 @@ export default function Playlists() {
     getPlaylistData()
   }, [token, dispatch])
   return (
-    <Container>
+    <S.Container>
       <div>
         <ul>
           {playlists.map(({ name, id }) => {
@@ -36,6 +36,6 @@ export default function Playlists() {
           })}
         </ul>
       </div>
-    </Container>
+    </S.Container>
   )
 }

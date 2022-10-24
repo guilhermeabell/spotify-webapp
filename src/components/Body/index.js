@@ -5,7 +5,7 @@ import { useStateProvider } from '../../contexts/StateProvider'
 import axios from 'axios'
 import { reducerCases } from '../../utils/constants/index'
 
-import { Container } from './styles'
+import * as S from './styles'
 
 export function Body({ headerBackground }) {
   const [{ token, selectedPlaylistId, selectedPlaylist }, dispatch] = useStateProvider()
@@ -47,7 +47,7 @@ export function Body({ headerBackground }) {
   }
 
   return (
-    <Container headerBackground={headerBackground}>
+    <S.Container headerBackground={headerBackground}>
       {selectedPlaylist && (
         <>
           <div className="playlist">
@@ -106,7 +106,7 @@ export function Body({ headerBackground }) {
           </div>
         </>
       )}
-    </Container>
+    </S.Container>
   )
 }
 

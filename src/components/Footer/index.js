@@ -3,14 +3,14 @@ import { CurrentTrack } from '../CurrentTrack'
 import { PlayerControls } from '../PlayerControls'
 import { Volume } from '../Volume'
 
-import { Container } from './styles'
+import * as S from './styles'
 
 export function Footer() {
   return (
-    <Container>
+    <S.Container>
       <CurrentTrack />
       <PlayerControls />
       <Volume />
-    </Container>
+    </S.Container>
   )
 }

@@ -6,7 +6,7 @@ import { useStateProvider } from '../../contexts/StateProvider'
 import axios from 'axios'
 import { reducerCases } from '../../utils/constants/index'
 
-import { Container } from './styles'
+import * as S from './styles'
 
 export function PlayerControls() {
   const [{ token, playerState }, dispatch] = useStateProvider()
@@ -60,7 +60,7 @@ export function PlayerControls() {
     })
   }
   return (
-    <Container>
+    <S.Container>
       <div className="shuffle">
         <BsShuffle />
       </div>
@@ -77,6 +77,6 @@ export function PlayerControls() {
         {}
         <FiRepeat />
       </div>
-    </Container>
+    </S.Container>
   )
 }

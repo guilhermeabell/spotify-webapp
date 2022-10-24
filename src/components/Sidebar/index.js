@@ -3,11 +3,11 @@ import { IoLibrary } from 'react-icons/io5'
 import { MdHomeFilled, MdSearch } from 'react-icons/md'
 import Playlists from '../Playlists'
 
-import { Container } from './styles'
+import * as S from './styles'
 
 export function Sidebar() {
   return (
-    <Container>
+    <S.Container>
       <div className="top_links">
         <div className="logo">
           <img src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_White.png" alt="spotify" />
@@ -28,6 +28,6 @@ export function Sidebar() {
         </ul>
       </div>
       <Playlists />
-    </Container>
+    </S.Container>
   )
 }

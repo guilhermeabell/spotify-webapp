@@ -2,7 +2,7 @@ import React from 'react'
 import { useStateProvider } from '../../contexts/StateProvider'
 import axios from 'axios'
 
-import { Container } from './styles'
+import * as S from './styles'
 
 export function Volume() {
   const [{ token }] = useStateProvider()
@@ -23,8 +23,8 @@ export function Volume() {
     console.log(response)
   }
   return (
-    <Container>
+    <S.Container>
       <input type="range" min={0} max={100} onMouseUp={(e) => setVolume(e)} />
-    </Container>
+    </S.Container>
   )
 }

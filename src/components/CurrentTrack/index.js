@@ -4,7 +4,7 @@ import axios from 'axios'
 import { reducerCases } from '../../utils/constants/index'
 import { useStateProvider } from '../../contexts/StateProvider'
 
-import { Container } from './styles'
+import * as S from './styles'
 
 export function CurrentTrack() {
   const [{ token, currentlyPlaying }, dispatch] = useStateProvider()
@@ -37,7 +37,7 @@ player controls only work if user account is premium
 */
 
   return (
-    <Container>
+    <S.Container>
       {currentlyPlaying && (
         <div className="track">
           <div className="track_image">
@@ -52,7 +52,7 @@ player controls only work if user account is premium
           </div>
         </div>
       )}
-    </Container>
+    </S.Container>
   )
 }
 
