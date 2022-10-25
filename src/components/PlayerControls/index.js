@@ -55,7 +55,6 @@ export function PlayerControls() {
         },
       },
     )
-    console.log(response)
     dispatch({
       type: reducerCases.SET_PLAYER_STATE,
       playerState: !playerState,

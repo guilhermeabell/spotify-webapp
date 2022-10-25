@@ -3,7 +3,6 @@ import { api } from './api'
 export const getAllPlaylist = async () => {
   try {
     const response = await api.get('/me/playlists')
-    console.log(response.data)
 
     const { items } = response.data
 

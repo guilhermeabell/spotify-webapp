@@ -1,9 +1,7 @@
-import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useStateProvider } from '../../contexts/StateProvider'
 import { reducerCases } from '../../utils/constants/index'
 
-import { parseCookies } from 'nookies'
 import * as S from './styles'
 import { getAllPlaylist } from '../../services/playlist'
 
