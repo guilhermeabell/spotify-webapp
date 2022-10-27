@@ -5,6 +5,7 @@ import Auth from '../pages/Auth'
 import Home from '../pages/Home'
 import Login from '../pages/Login'
 import ProtectedRoute from './ProtectedRoute'
+import VolumeRange from '../components/VolumeRange'
 
 const AllRoutes = () => {
   return (
@@ -19,6 +20,7 @@ const AllRoutes = () => {
           </ProtectedRoute>
         }
       />
+      <Route path="/volume" element={<VolumeRange />} />
     </Routes>
   )
 }
