@@ -5,6 +5,7 @@ import { CgPlayTrackNext, CgPlayTrackPrev } from 'react-icons/cg'
 import { FiRepeat } from 'react-icons/fi'
 import { useStateProvider } from '../../contexts/StateProvider'
 import { reducerCases } from '../../utils/constants/index'
+import Tooltip from '../Tooltip'
 
 import { parseCookies } from 'nookies'
 import * as S from './styles'
@@ -66,13 +67,25 @@ export function PlayerControls() {
         <BsShuffle />
       </div>
       <div className="previous">
-        <CgPlayTrackPrev onClick={() => changeTrack('previous')} />
+        <Tooltip text="Voltar" position="top">
+          <CgPlayTrackPrev size={30} onClick={() => changeTrack('previous')} />
+        </Tooltip>
       </div>
       <div className="state">
-        {playerState ? <BsFillPauseCircleFill onClick={changeState} /> : <BsFillPlayCircleFill onClick={changeState} />}
+        {playerState ? (
+          <Tooltip text="Pausar" position="top">
+            <BsFillPauseCircleFill size={40} onClick={changeState} />
+          </Tooltip>
+        ) : (
+          <Tooltip text="Play" position="top">
+            <BsFillPlayCircleFill size={40} onClick={changeState} />
+          </Tooltip>
+        )}
       </div>
       <div className="next">
-        <CgPlayTrackNext onClick={() => changeTrack('next')} />
+        <Tooltip text="Avançar" position="top">
+          <CgPlayTrackNext size={30} onClick={() => changeTrack('next')} />
+        </Tooltip>
       </div>
       <div className="repeat">
         {}
