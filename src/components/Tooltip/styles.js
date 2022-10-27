@@ -68,7 +68,7 @@ export const TooltipBox = styled.span`
   background-color: #282828;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #fff;
-  font-family: sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   padding: 10px 8px;
   font-size: 12px;
   border-radius: 5px;
