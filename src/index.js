@@ -8,7 +8,7 @@ import reducer, { initialState } from './utils/reducer'
 import Routes from './routes'
 import AuthProvider from './contexts/AuthContext'
 
-import './styles/index.css'
+import './styles/global'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
