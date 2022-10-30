@@ -9,6 +9,7 @@ import Tooltip from '../Tooltip'
 
 import { parseCookies } from 'nookies'
 import * as S from './styles'
+import { getCurrentlyPlaying } from '../../services/player'
 
 export function PlayerControls() {
   const { ['@token']: token } = parseCookies()
@@ -26,24 +27,32 @@ export function PlayerControls() {
       },
     )
 
-    const response = await axios.get('https://api.spotify.com/v1/me/player/currently-playing', {
-      headers: {
-        Authorization: 'Bearer ' + token,
-        'Content-Type': 'application/json',
-      },
-    })
+    // const response = await axios.get('https://api.spotify.com/v1/me/player/currently-playing', {
+    //   headers: {
+    //     Authorization: 'Bearer ' + token,
+    //     'Content-Type': 'application/json',
+    //   },
+    // })
 
-    if (response.data !== '') {
-      const { item } = response.data
-      const currentlyPlaying = {
-        id: item.id,
-        name: item.name,
-        artists: item.artists.map((artist) => artist.name),
-        image: item.album.images[2].url,
-      }
+    // if (response.data !== '') {
+    //   const { item } = response.data
+    //   const currentlyPlaying = {
+    //     id: item.id,
+    //     name: item.name,
+    //     artists: item.artists.map((artist) => artist.name),
+    //     image: item.album.images[2].url,
+    //   }
+    //   dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying })
+    // } else dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying: null })
+
+    const currentlyPlaying = await getCurrentlyPlaying()
+    if (currentlyPlaying !== '') {
       dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying })
-    } else dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying: null })
+    } else {
+      dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying: null })
+    }
   }
+
   const changeState = async () => {
     const state = playerState ? 'pause' : 'play'
     const response = await axios.put(
