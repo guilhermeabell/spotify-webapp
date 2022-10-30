@@ -38,11 +38,11 @@ export function Body({ headerBackground }) {
           track_number: track.track_number,
         })),
       }
-      // console.log(selectedPlaylist);
-      // console.log(response.data);
       dispatch({ type: reducerCases.SET_PLAYLIST, selectedPlaylist })
     }
-    getInitialPlaylist()
+    if (selectedPlaylistId) {
+      getInitialPlaylist()
+    }
   }, [token, dispatch, selectedPlaylistId])
 
   const msToMinutesAndSeconds = (ms) => {

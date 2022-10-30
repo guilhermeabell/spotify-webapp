@@ -18,3 +18,8 @@ export const getCurrentlyPlaying = async () => {
     throw new Error(err)
   }
 }
+
+export const changePlayerState = (playerState) => {
+  const state = playerState ? 'pause' : 'play'
+  return api.put(`me/player/${state}`)
+}
