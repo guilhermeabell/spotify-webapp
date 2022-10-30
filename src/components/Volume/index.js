@@ -21,7 +21,6 @@ export function Volume() {
         },
       },
     )
-    console.log(response)
   }
   return (
     <S.Container>
