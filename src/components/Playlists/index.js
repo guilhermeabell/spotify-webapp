@@ -12,6 +12,7 @@ export default function Playlists() {
     try {
       const playlists = await getAllPlaylist()
       dispatch({ type: reducerCases.SET_PLAYLISTS, playlists })
+      changeCurrentPlaylist(playlists[Math.floor(Math.random() * playlists.length)].id)
     } catch (err) {
       console.log(err)
     }

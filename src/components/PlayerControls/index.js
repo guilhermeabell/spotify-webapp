@@ -17,7 +17,7 @@ export function PlayerControls() {
   const [{ playerState }, dispatch] = useStateProvider()
 
   const changeTrack = async (type) => {
-    await api.post(`https://api.spotify.com/v1/me/player/${type}`)
+    await api.post(`me/player/${type}`)
     try {
       const currentlyPlaying = await getCurrentlyPlaying()
       dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying: currentlyPlaying || null })
