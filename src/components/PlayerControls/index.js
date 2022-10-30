@@ -10,28 +10,19 @@ import Tooltip from '../Tooltip'
 import { parseCookies } from 'nookies'
 import * as S from './styles'
 import { getCurrentlyPlaying } from '../../services/player'
+import { api } from '../../services/api'
 
 export function PlayerControls() {
   const { ['@token']: token } = parseCookies()
   const [{ playerState }, dispatch] = useStateProvider()
 
   const changeTrack = async (type) => {
-    await axios.post(
-      `https://api.spotify.com/v1/me/player/${type}`,
-      {},
-      {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'Content-Type': 'application/json',
-        },
-      },
-    )
-
-    const currentlyPlaying = await getCurrentlyPlaying()
-    if (currentlyPlaying !== '') {
-      dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying })
-    } else {
-      dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying: null })
+    await api.post(`https://api.spotify.com/v1/me/player/${type}`)
+    try {
+      const currentlyPlaying = await getCurrentlyPlaying()
+      dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying: currentlyPlaying || null })
+    } catch (err) {
+      console.log(err)
     }
   }
 
