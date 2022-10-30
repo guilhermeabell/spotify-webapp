@@ -58,18 +58,18 @@ export function Body({ headerBackground }) {
     <S.Container headerBackground={headerBackground}>
       {selectedPlaylist && (
         <>
-          <div className="playlist">
-            <div className="image">
+          <S.Playlist>
+            <S.Image className="image">
               <img src={selectedPlaylist.image} alt="selectedPlaylist" />
-            </div>
-            <div className="details">
+            </S.Image>
+            <S.Details>
               <span className="type">{selectedPlaylist.name}</span>
-              <h1 className="title">{selectedPlaylistId.name}</h1>
+              <S.Title>{selectedPlaylistId.name}</S.Title>
               <p className="description">{selectedPlaylist.description}</p>
-            </div>
-          </div>
-          <div className="list">
-            <div className="header_row">
+            </S.Details>
+          </S.Playlist>
+          <S.List>
+            <S.HeaderRow>
               <div className="col">
                 <span>#</span>
               </div>
@@ -84,34 +84,34 @@ export function Body({ headerBackground }) {
                   <AiFillClockCircle />
                 </span>
               </div>
-            </div>
-            <div className="tracks">
+            </S.HeaderRow>
+            <S.Tracks>
               {selectedPlaylist.tracks.map(({ id, name, artists, image, duration, album, context_uri, track_number }, index) => {
                 return (
-                  <div className="row" key={id} onClick={() => playTrack(id, name, artists, image, context_uri, track_number)}>
-                    <div className="col">
+                  <S.Row key={id} onClick={() => playTrack(id, name, artists, image, context_uri, track_number)}>
+                    <S.Col>
                       <span>{index + 1}</span>
-                    </div>
-                    <div className="col detail">
-                      <div className="img">
+                    </S.Col>
+                    <S.Detail>
+                      <imvv fgrgfrvtvtcg>
                         <img src={image} alt="track" />
-                      </div>
-                      <div className="info">
+                      </imvv>
+                      <S.Info>
                         <span className="name">{name}</span>
                         <span>{artists}</span>
-                      </div>
-                    </div>
-                    <div className="col">
+                      </S.Info>
+                    </S.Detail>
+                    <S.Col>
                       <span>{album}</span>
-                    </div>
-                    <div className="col">
+                    </S.Col>
+                    <S.Col>
                       <span>{msToMinutesAndSeconds(duration)}</span>
-                    </div>
-                  </div>
+                    </S.Col>
+                  </S.Row>
                 )
               })}
-            </div>
-          </div>
+            </S.Tracks>
+          </S.List>
         </>
       )}
     </S.Container>
