@@ -1,4 +1,3 @@
-import axios from 'axios'
 import PropTypes from 'prop-types'
 import React, { useEffect } from 'react'
 import { AiFillClockCircle } from 'react-icons/ai'
@@ -7,43 +6,25 @@ import { reducerCases } from '../../utils/constants/index'
 
 import * as S from './styles'
 
-import { parseCookies } from 'nookies'
+import { getSelectedPlaylist } from '../../services/selectedPlaylist'
+import { api } from '../../services/api'
 
 export function Body({ headerBackground }) {
-  const { ['@token']: token } = parseCookies()
-
   const [{ selectedPlaylistId, selectedPlaylist }, dispatch] = useStateProvider()
 
   useEffect(() => {
     const getInitialPlaylist = async () => {
-      const response = await axios.get(`https://api.spotify.com/v1/playlists/${selectedPlaylistId}`, {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'Content-Type': 'application/json',
-        },
-      })
-      const selectedPlaylist = {
-        id: response.data.id,
-        name: response.data.name,
-        description: response.data.description.startsWith('<a') ? ' ' : response.data.description,
-        image: response.data.images[0].url,
-        tracks: response.data.tracks.items.map(({ track }) => ({
-          id: track.id,
-          name: track.name,
-          artists: track.artists.map((artist) => artist.name),
-          image: track.album.images[2].url,
-          duration: track.duration_ms,
-          album: track.album.name,
-          context_uri: track.album.uri,
-          track_number: track.track_number,
-        })),
+      try {
+        const selectedPlaylist = await getSelectedPlaylist(selectedPlaylistId)
+        dispatch({ type: reducerCases.SET_PLAYLIST, selectedPlaylist })
+      } catch (err) {
+        console.log(err)
       }
-      dispatch({ type: reducerCases.SET_PLAYLIST, selectedPlaylist })
     }
     if (selectedPlaylistId) {
       getInitialPlaylist()
     }
-  }, [token, dispatch, selectedPlaylistId])
+  }, [dispatch, selectedPlaylistId])
 
   const msToMinutesAndSeconds = (ms) => {
     const minutes = Math.floor(ms / 60000)
@@ -52,22 +33,13 @@ export function Body({ headerBackground }) {
   }
 
   const playTrack = async (id, name, artists, image, context_uri, track_number) => {
-    const response = await axios.put(
-      `https://api.spotify.com/v1/me/player/play`,
-      {
-        context_uri,
-        offset: {
-          position: track_number - 1,
-        },
-        position_ms: 0,
+    const response = await api.put(`https://api.spotify.com/v1/me/player/play`, {
+      context_uri,
+      offset: {
+        position: track_number - 1,
       },
-      {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'Content-Type': 'application/json',
-        },
-      },
-    )
+      position_ms: 0,
+    })
     if (response.status === 204) {
       const currentlyPlaying = {
         id,
