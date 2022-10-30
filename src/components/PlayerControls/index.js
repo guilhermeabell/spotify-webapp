@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React from 'react'
 import { BsFillPauseCircleFill, BsFillPlayCircleFill, BsShuffle } from 'react-icons/bs'
 import { CgPlayTrackNext, CgPlayTrackPrev } from 'react-icons/cg'
@@ -9,7 +8,7 @@ import Tooltip from '../Tooltip'
 
 import { parseCookies } from 'nookies'
 import * as S from './styles'
-import { getCurrentlyPlaying } from '../../services/player'
+import { getCurrentlyPlaying, changePlayerState } from '../../services/player'
 import { api } from '../../services/api'
 
 export function PlayerControls() {
@@ -28,20 +27,16 @@ export function PlayerControls() {
 
   const changeState = async () => {
     const state = playerState ? 'pause' : 'play'
-    const response = await axios.put(
-      `https://api.spotify.com/v1/me/player/${state}`,
-      {},
-      {
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'Content-Type': 'application/json',
-        },
-      },
-    )
-    dispatch({
-      type: reducerCases.SET_PLAYER_STATE,
-      playerState: !playerState,
-    })
+
+    try {
+      const response = await changePlayerState(state)
+      dispatch({
+        type: reducerCases.SET_PLAYER_STATE,
+        playerState: !playerState,
+      })
+    } catch (err) {
+      console.log(err)
+    }
   }
   return (
     <S.Container>

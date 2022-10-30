@@ -19,7 +19,6 @@ export const getCurrentlyPlaying = async () => {
   }
 }
 
-export const changePlayerState = (playerState) => {
-  const state = playerState ? 'pause' : 'play'
+export const changePlayerState = (state) => {
   return api.put(`me/player/${state}`)
 }
