@@ -27,24 +27,6 @@ export function PlayerControls() {
       },
     )
 
-    // const response = await axios.get('https://api.spotify.com/v1/me/player/currently-playing', {
-    //   headers: {
-    //     Authorization: 'Bearer ' + token,
-    //     'Content-Type': 'application/json',
-    //   },
-    // })
-
-    // if (response.data !== '') {
-    //   const { item } = response.data
-    //   const currentlyPlaying = {
-    //     id: item.id,
-    //     name: item.name,
-    //     artists: item.artists.map((artist) => artist.name),
-    //     image: item.album.images[2].url,
-    //   }
-    //   dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying })
-    // } else dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying: null })
-
     const currentlyPlaying = await getCurrentlyPlaying()
     if (currentlyPlaying !== '') {
       dispatch({ type: reducerCases.SET_PLAYING, currentlyPlaying })
