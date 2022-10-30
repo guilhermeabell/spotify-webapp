@@ -6,13 +6,11 @@ import { useStateProvider } from '../../contexts/StateProvider'
 import { reducerCases } from '../../utils/constants/index'
 import Tooltip from '../Tooltip'
 
-import { parseCookies } from 'nookies'
 import * as S from './styles'
 import { getCurrentlyPlaying, changePlayerState } from '../../services/player'
 import { api } from '../../services/api'
 
 export function PlayerControls() {
-  const { ['@token']: token } = parseCookies()
   const [{ playerState }, dispatch] = useStateProvider()
 
   const changeTrack = async (type) => {

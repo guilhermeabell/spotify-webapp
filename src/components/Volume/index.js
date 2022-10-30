@@ -1,23 +1,15 @@
-import axios from 'axios'
 import React from 'react'
 
-import { parseCookies } from 'nookies'
 import * as S from './styles'
 
 export function Volume() {
-  const { ['@token']: token } = parseCookies()
-
   const setVolume = async (e) => {
-    const response = await axios.put(
+    const response = await api.put(
       `https://api.spotify.com/v1/me/player/volume`,
       {},
       {
         params: {
           volume_percent: parseInt(e.target.value),
-        },
-        headers: {
-          Authorization: 'Bearer ' + token,
-          'Content-Type': 'application/json',
         },
       },
     )
