@@ -58,7 +58,7 @@ export function Body({ headerBackground }) {
     <S.Container headerBackground={headerBackground}>
       {selectedPlaylist && (
         <>
-          <div className="playlist">
+          <S.Playlist>
             <div className="image">
               <img src={selectedPlaylist.image} alt="selectedPlaylist" />
             </div>
@@ -67,7 +67,7 @@ export function Body({ headerBackground }) {
               <h1 className="title">{selectedPlaylistId.name}</h1>
               <p className="description">{selectedPlaylist.description}</p>
             </div>
-          </div>
+          </S.Playlist>
           <div className="list">
             <div className="header_row">
               <div className="col">

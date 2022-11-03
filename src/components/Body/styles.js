@@ -1,29 +1,29 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
-  .playlist {
-    margin: 0 2rem;
-    align-items: center;
-    grid-template-columns: 15vw 85vw;
-    display: flex;
-    gap: 2rem;
-    .image {
-      img {
-        height: 15rem;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px;
-      }
-    }
-    .details {
-      display: flex;
-      flex-direction: column;
-      color: #e0dede;
-      .title {
-        color: white;
-        font-size: 4rem;
-        gap: 1rem;
-      }
+export const Playlist = styled.div`
+  margin: 0 2rem;
+  align-items: center;
+  grid-template-columns: 15vw 85vw;
+  display: flex;
+  gap: 2rem;
+  .image {
+    img {
+      height: 15rem;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 25px;
     }
   }
+  .details {
+    display: flex;
+    flex-direction: column;
+    color: #e0dede;
+    .title {
+      color: white;
+      font-size: 4rem;
+      gap: 1rem;
+    }
+  }
+`
+export const Container = styled.div`
   .list {
     .header_row {
       display: grid;
@@ -68,14 +68,6 @@ export const Container = styled.div`
       }
     }
   }
-`
-
-export const Playlist = styled.div`
-  margin: 0 2rem;
-  align-items: center;
-  grid-template-columns: 15vw 85vw;
-  display: flex;
-  gap: 2rem;
 `
 
 export const Image = styled.div`
