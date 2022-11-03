@@ -2,6 +2,9 @@
   "name": "spotify-webapp",
   "version": "1.0.0",
   "private": false,
+  "engines": {
+    "node": ">=14.0.0 <18.0.0"
+  },
   "dependencies": {
     "@babel/eslint-parser": "^7.19.1",
     "@testing-library/jest-dom": "^5.16.5",
