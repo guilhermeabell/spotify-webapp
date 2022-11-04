@@ -53,15 +53,4 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 </h1>
 
 
-##  Technologies
-
-- [ReactJS](https://reactjs.org/)
-- [styled-components](https://www.styled-components.com/)
-- [axios](https://axios-http.com/ptbr/docs/intro)
-- [pm2](https://pm2.keymetrics.io/)
-- [Github Actions](https://github.com/features/actions)
-
----
-
-Made with  by Guilherme Abel
 
